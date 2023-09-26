@@ -9,6 +9,7 @@ class Solution:
         
        
         seen = [False] * n
+#  [False, False, False]       
         seen[source] = True
         queue = collections.deque([source])
     
