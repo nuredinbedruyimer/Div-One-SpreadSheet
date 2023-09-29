@@ -1,7 +1,6 @@
 class Solution:
     def maximumTastiness(self, price: List[int], k: int) -> int:
-        if k == 0:
-            return 0
+
         price.sort()
         n = len(price)
         counter = 1
