@@ -27,7 +27,7 @@ class Solution:
                     left=left+1
             return ans
         
-        print( end(nums,target))
+        
         def isFound(nums,target):
             left=0
             right=len(nums)-1
