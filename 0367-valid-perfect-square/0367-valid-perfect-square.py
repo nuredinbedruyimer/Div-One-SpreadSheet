@@ -1,14 +1,17 @@
-class Solution(object):
-    def isPerfectSquare(self, num):
-        low=0
-        high=num
-        while low<=high:
-            middle=(low+high)//2
-            if middle*middle==num:
-                return True
-            if middle*middle>num:
-                high=middle-1
+class Solution:
+    def isPerfectSquare(self, num: int) -> bool:
+       
+        left=0
+        right=num
+        while left<=right:
+            middle=(left+right)//2
+            if middle*middle >num:
+                right=middle-1
+            elif middle*middle<num:
+                left=middle+1
             else:
-                low=middle+1
+                return True
         return False
+                
         
+       
