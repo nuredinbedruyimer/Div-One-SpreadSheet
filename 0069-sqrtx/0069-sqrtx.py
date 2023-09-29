@@ -1,14 +1,14 @@
-class Solution(object):
-    def mySqrt(self, x):
-        low=0
-        high=x
-        while low<=high:
-            middle=(high+low)//2
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        left=0
+        right=x
+        while left<=right:
+            middle=(left+right)//2
             if middle*middle==x:
                 return middle
             elif middle*middle>x:
-                high=middle-1
+                right=middle-1
             else:
-                low=middle+1
-        return low-1
-            
+                left=middle+1
+        return left-1
+        
