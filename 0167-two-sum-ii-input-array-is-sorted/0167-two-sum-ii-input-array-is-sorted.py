@@ -1,11 +1,12 @@
+from bisect import bisect
+
 class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        mapping={}
-        for one in range(len(numbers)):
-            mapping[numbers[one]]=one
-        for one in range(len(numbers)):
-            remain=target-numbers[one]
-            
-            if remain in mapping and one !=mapping[remain]:
-                return [one+1,mapping[remain]+1]
+    def twoSum(self, numbers: List[int], target: int):
+        hi = len(numbers)
+        for lo, diff in enumerate(target - num for num in numbers):
+            hi = bisect_right(numbers, diff, lo, hi)
+ 
+            if diff == numbers[hi-1]:
+                return [lo+1, hi]
+                
         
