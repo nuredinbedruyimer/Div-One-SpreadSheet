@@ -4,7 +4,7 @@ class Solution:
         left,right=0,len(nums)-1
         mid=(left+right)//2
         while right>left+1:
-            mid=(left+right)//2
+            
             if nums[mid]>nums[mid-1]:
                 if nums[mid]>nums[mid+1]:
                     return mid
