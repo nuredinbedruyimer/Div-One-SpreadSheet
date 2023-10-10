@@ -1,5 +1,6 @@
 class Solution:
     def maxArea(self, height: List[int]) -> int:
+       #   Two Pointer       
         left=0
         right=len(height)-1
         maxVolume=0
