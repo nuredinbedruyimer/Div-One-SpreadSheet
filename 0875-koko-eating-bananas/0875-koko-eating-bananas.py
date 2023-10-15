@@ -3,7 +3,7 @@ class Solution:
         """4,11,20,23,30
         h=5 """
         left=1
-        right=max(piles)
+        right=10**9
         time=right
         while left<=right:
             middle=(left+right)//2
