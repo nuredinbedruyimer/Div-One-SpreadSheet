@@ -1,20 +1,27 @@
 class Solution:
-    def maximumCandies(self, candies, k):
-        n = len(candies)
-        left = 1 
-        right = max(candies)  
-        ans = 0 # 
-               
+    def maximumCandies(self, candies: List[int], k: int) -> int:
+        def canDistribute(candie, k, candies):
+            counter = 0
+            for c in candies:
+                counter += c // candie
+            return counter >= k
 
-        while left <= right:  # binary search
-            numberOfPiles = 0
-            mid = (left) + (right - left) // 2
 
-            for i in range(n):   
-                numberOfPiles += candies[i] // mid   
-            if numberOfPiles >= k: # 
-                ans = max(ans, mid)    
-                left = mid + 1    
-            else: 
-                right = mid - 1  
-        return ans
+        def maxCandies(candies, k):
+            low = 1
+            high = max(candies)
+            ans = 0
+            while low <= high:
+                mid = (low + high) // 2
+                if canDistribute(mid, k, candies):
+                    ans = mid
+                    low = mid + 1
+                else:
+                    high = mid - 1
+            return ans
+        return maxCandies(candies,k)
+    
+
+
+
+        
