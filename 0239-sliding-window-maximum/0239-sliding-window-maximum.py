@@ -3,19 +3,19 @@ class Solution:
         def Max(nums,k):
             left=0
             right=0
-            d=deque()
+            stack=deque()
             res=[]
             while right<len(nums):
-                while  len(d)>0 and d[-1]<nums[right]:
-                    d.pop()
-                d.append(nums[right])
+                while  len(stack)>0 and stack[-1]<nums[right]:
+                    stack.pop()
+                stack.append(nums[right])
                 window=right-left+1
                 if window<k:
                     right+=1
                 elif window==k:
-                    res.append(d[0])
-                    if d[0]==nums[left]:
-                        d.popleft()
+                    res.append(stack[0])
+                    if stack[0]==nums[left]:
+                        stack.popleft()
                     left+=1
                     right+=1
             return res
